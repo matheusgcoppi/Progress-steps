@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@1,200&display=swap');
+
+:root {
+    --line-border-fill: #3498db;
+    --line-border-empty: #e0e0e0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+ body {
+     background-color: #f6f7fb;
+    font-family: 'Mulish', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+ }
+
+ .container {
+     text-align: center;
+ }
+
+ .progress-container {
+     display: flex;
+     justify-content: space-between;
+     position: relative;
+     margin-bottom: 1.875rem;
+     max-width: 100%;
+     width: 350px;
+ }
+
+ .progress-container::before {
+    content: ''; /*If u don't put it doesn't work*/
+    background-color: var(--line-border-empty);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%); /*to put a line in the middle of the numbers*/
+    height: 0.25rem;
+    width: 100%; /*line width*/
+    z-index: -1; /*it will be placed behind the numbers*/
+
+}
+
+ .progress {
+     background-color: var(--line-border-fill);
+     position: absolute;
+     top: 50%;
+     left: 0;
+     transform: translateY(-50%); /*to put a line in the middle of the numbers*/
+     height: 0.25rem;
+     width: 50%; /*line width*/
+     z-index: -1; /*it will be placed behind the numbers*/
+     transition: 0.4s ease-in;
+ }
+
+ .circle {
+     background-color: #fff;
+     color: #999;
+     border-radius: 50%;
+     height: 1.875rem;
+     width: 1.875rem;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     border: 3px solid var(--line-border-empty);
+     transition: 0.4s ease;
+ }
+
+ .circle.active {
+     border-color: var(--line-border-fill);
+ }
+
+ .btn {
+     background-color: var(--line-border-fill);
+     color: #fff;
+     border: 0;
+     border-radius: 0.4rem;
+     cursor: pointer;
+     font-family: sans-serif;
+     padding: 0.5rem 1.875rem;
+     margin: 5px;
+     font-size: 0.875rem;
+ }
+
+ .btn:active {
+     transform: scale(0.98); /*When you click, scale 0.98 te button*/
+ }
+
+ .btn:focus {
+     outline: 0px;
+ }
+
+ .btn:disabled {
+     background-color: var(--line-border-empty);
+     cursor: pointer not-allowed;
+ }
