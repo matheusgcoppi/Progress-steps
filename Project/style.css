@@ -1,3 +1,9 @@
+@media (prefers-color-scheme: dark) {
+}
+
+@media (prefers-color-scheme: light) {
+}
+    
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@1,200&display=swap');
 
 :root {
@@ -58,7 +64,7 @@ html {
      left: 0;
      transform: translateY(-50%); /*to put a line in the middle of the numbers*/
      height: 0.25rem;
-     width: 50%; /*line width*/
+     width: 0%; /*line width*/
      z-index: -1; /*it will be placed behind the numbers*/
      transition: 0.4s ease-in;
  }
